@@ -85,7 +85,7 @@ app.get("/contact", function(req, res){
   res.render("contact", {contactContent: contactContent});
 });
 
-let port = process.env.PORT;
+let port = process.env.PORT || 3000;
 if (port == null || port == "") {
   port = 3000;
 }
@@ -94,3 +94,6 @@ app.listen(port);
 app.listen(port, function() {
   console.log("Server have started successfully.");
 });
+
+// 2020-08-14T14:43:57.797701+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=sheltered-sands-34816.herokuapp.com request_id=59ac226e-d3d4-498c-82a9-e7a867e5b5ce fwd="47.30.152.89" dyno= connect= service= status=503 bytes= protocol=https
+// 2020-08-14T14:50:50.437352+00:00 heroku[web.1]: State changed from crashed to starting
